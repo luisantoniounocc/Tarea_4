@@ -1,14 +1,119 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog con Autenticación</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog con Autenticación Básica</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-    <h1>📘 Blog Personal</h1>
-    <p>Proyecto Tarea 04</p>
+<main class="app">
 
+  <section id="authView" class="auth-view">
+    <div class="auth-card">
+      <div class="auth-left">
+        <span class="badge">Tarea 04</span>
+        <h1>Blog Personal</h1>
+        <p>Aplicación web con autenticación básica, CRUD de publicaciones y persistencia local.</p>
+      </div>
+
+      <div class="auth-right">
+        <button id="themeBtnAuth" class="theme-floating">🌙</button>
+
+        <div class="tabs">
+          <button id="tabLogin" class="tab active">Login</button>
+          <button id="tabRegister" class="tab">Registro</button>
+        </div>
+
+        <form id="loginForm" class="form">
+          <h2>Iniciar sesión</h2>
+          <label>Usuario</label>
+          <input type="text" id="loginUser" placeholder="Ingrese su usuario" required />
+          <label>Contraseña</label>
+          <input type="password" id="loginPassword" placeholder="Ingrese su contraseña" required />
+          <button class="btn btn-primary" type="submit">Ingresar</button>
+        </form>
+
+        <form id="registerForm" class="form hidden">
+          <h2>Crear cuenta</h2>
+          <label>Usuario</label>
+          <input type="text" id="registerUser" placeholder="Cree un usuario" required />
+          <label>Contraseña</label>
+          <input type="password" id="registerPassword" placeholder="Cree una contraseña" required />
+          <button class="btn btn-success" type="submit">Registrarme</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section id="blogView" class="blog-view hidden">
+    <header class="blog-header">
+      <div>
+        <h1>Mi Blog</h1>
+        <p id="welcomeText">Bienvenido</p>
+      </div>
+      <div class="header-actions">
+        <button id="themeBtnBlog" class="btn btn-secondary">🌙 Tema</button>
+        <button id="logoutBtn" class="btn btn-danger">Cerrar sesión</button>
+      </div>
+    </header>
+
+    <section class="blog-grid">
+      <div class="panel">
+        <h2 id="formTitle">Nueva publicación</h2>
+        <form id="postForm">
+          <input type="hidden" id="postId" />
+          <label>Título</label>
+          <input type="text" id="postTitle" placeholder="Título de la publicación" required />
+          <label>Contenido</label>
+          <textarea id="postContent" placeholder="Escribe el contenido" required></textarea>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <button type="button" id="cancelEditBtn" class="btn btn-secondary hidden">Cancelar</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="panel">
+        <h2>Publicaciones</h2>
+        <div id="postList" class="post-list"></div>
+      </div>
+    </section>
+  </section>
+
+  <section id="detailView" class="detail-view hidden">
+    <article class="detail-card">
+      <button id="backBtn" class="btn btn-secondary">← Volver</button>
+      <h1 id="detailTitle"></h1>
+      <span id="detailDate" class="date"></span>
+      <p id="detailContent"></p>
+    </article>
+  </section>
+
+</main>
+
+<div id="messageModal" class="modal hidden">
+  <div class="modal-box">
+    <div id="modalIcon" class="modal-icon">✅</div>
+    <h2 id="modalTitle">Mensaje</h2>
+    <p id="modalText">Contenido</p>
+    <button id="modalClose" class="btn btn-primary">Aceptar</button>
+  </div>
+</div>
+
+<div id="confirmModal" class="modal hidden">
+  <div class="modal-box">
+    <div class="modal-icon warning">⚠️</div>
+    <h2>Confirmar eliminación</h2>
+    <p>¿Seguro que deseas eliminar esta publicación?</p>
+    <div class="modal-actions">
+      <button id="confirmDeleteBtn" class="btn btn-danger">Eliminar</button>
+      <button id="cancelDeleteBtn" class="btn btn-secondary">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>

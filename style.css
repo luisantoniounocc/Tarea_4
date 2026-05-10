@@ -1,0 +1,96 @@
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Segoe UI",Arial,sans-serif}
+body{min-height:100vh;background:linear-gradient(135deg,#020617,#1e3a8a,#0284c7);color:#0f172a}
+.hidden{display:none!important}
+.app{min-height:100vh}
+
+.auth-view{min-height:100vh;display:flex;justify-content:center;align-items:center;padding:24px}
+.auth-card{width:100%;max-width:1050px;min-height:580px;display:grid;grid-template-columns:1.2fr 430px;background:rgba(255,255,255,.14);border-radius:30px;overflow:hidden;backdrop-filter:blur(18px);box-shadow:0 35px 90px rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.25)}
+.auth-left{padding:65px;color:white;display:flex;flex-direction:column;justify-content:center}
+.badge{width:fit-content;background:rgba(255,255,255,.18);padding:9px 16px;border-radius:999px;margin-bottom:20px;font-weight:700}
+.auth-left h1{font-size:56px;margin-bottom:18px}
+.auth-left p{max-width:500px;font-size:19px;line-height:1.7;color:#e0f2fe}
+.auth-right{background:white;padding:42px;display:flex;flex-direction:column;justify-content:center;position:relative}
+.theme-floating{position:absolute;right:18px;top:18px;border:none;background:#e2e8f0;border-radius:50%;width:42px;height:42px;cursor:pointer;font-size:18px}
+.tabs{background:#e2e8f0;padding:6px;border-radius:16px;display:flex;margin-bottom:28px}
+.tab{flex:1;border:none;background:transparent;padding:13px;border-radius:12px;cursor:pointer;font-weight:800;color:#475569}
+.tab.active{background:#2563eb;color:white}
+.form h2{font-size:29px;margin-bottom:23px}
+label{display:block;font-weight:800;margin-bottom:7px}
+input,textarea{width:100%;padding:15px;margin-bottom:18px;border-radius:14px;border:1px solid #cbd5e1;outline:none;background:#f8fafc;font-size:15px}
+input:focus,textarea:focus{border-color:#2563eb;background:white;box-shadow:0 0 0 4px rgba(37,99,235,.15)}
+textarea{min-height:160px;resize:vertical}
+.btn{border:none;padding:13px 18px;border-radius:14px;cursor:pointer;font-weight:900;transition:.2s}
+.btn:hover{transform:translateY(-2px);opacity:.95}
+.btn-primary{background:#2563eb;color:white}
+.btn-success{background:#16a34a;color:white}
+.btn-danger{background:#dc2626;color:white}
+.btn-secondary{background:#64748b;color:white}
+
+.blog-view{width:92%;max-width:1200px;margin:auto;padding:30px 0}
+.blog-header{background:white;border-radius:24px;padding:26px;margin-bottom:25px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 20px 50px rgba(0,0,0,.2)}
+.blog-header h1{font-size:34px;color:#1e3a8a}
+.blog-header p{color:#64748b;margin-top:5px}
+.header-actions{display:flex;gap:10px;flex-wrap:wrap}
+.blog-grid{display:grid;grid-template-columns:390px 1fr;gap:25px}
+.panel{background:white;padding:26px;border-radius:24px;box-shadow:0 20px 50px rgba(0,0,0,.2)}
+.panel h2{margin-bottom:20px}
+.form-actions{display:flex;gap:10px;flex-wrap:wrap}
+.post-list{display:grid;gap:18px}
+.post-card{padding:20px;background:#f8fafc;border-radius:20px;border:1px solid #e2e8f0;border-left:7px solid #2563eb}
+.post-card h3{color:#1e3a8a;margin-bottom:8px}
+.date{color:#64748b;font-size:14px;display:inline-block;margin-bottom:10px}
+.post-card p{line-height:1.6;color:#334155}
+.post-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:15px}
+
+.detail-view{min-height:100vh;display:flex;justify-content:center;align-items:center;padding:25px}
+.detail-card{width:100%;max-width:850px;background:white;padding:36px;border-radius:26px;box-shadow:0 30px 80px rgba(0,0,0,.35)}
+.detail-card h1{margin-top:25px;font-size:38px;color:#1e3a8a}
+.detail-card p{margin-top:18px;line-height:1.8;font-size:17px;color:#334155}
+
+.modal{position:fixed;inset:0;background:rgba(15,23,42,.68);backdrop-filter:blur(7px);display:flex;justify-content:center;align-items:center;z-index:1000;padding:20px}
+.modal-box{width:100%;max-width:430px;background:white;border-radius:26px;padding:34px;text-align:center;box-shadow:0 35px 90px rgba(0,0,0,.4);animation:modalUp .25s ease}
+.modal-icon{width:74px;height:74px;margin:0 auto 18px;border-radius:50%;display:flex;justify-content:center;align-items:center;font-size:35px;background:#dbeafe;color:#2563eb}
+.modal-icon.success{background:#dcfce7;color:#16a34a}
+.modal-icon.error{background:#fee2e2;color:#dc2626}
+.modal-icon.warning{background:#fef3c7;color:#f59e0b}
+.modal-box h2{margin-bottom:10px}
+.modal-box p{color:#475569;line-height:1.6;margin-bottom:23px}
+.modal-actions{display:flex;justify-content:center;gap:10px}
+@keyframes modalUp{from{transform:translateY(25px) scale(.96);opacity:0}to{transform:translateY(0) scale(1);opacity:1}}
+
+body.dark{background:linear-gradient(135deg,#020617,#0f172a,#111827)}
+body.dark .auth-right,body.dark .panel,body.dark .blog-header,body.dark .detail-card,body.dark .modal-box{background:#111827;color:white}
+body.dark input,body.dark textarea{background:#1e293b;color:white;border-color:#334155}
+body.dark input::placeholder,body.dark textarea::placeholder{color:#94a3b8}
+body.dark .tabs,body.dark .theme-floating{background:#1e293b;color:white}
+body.dark .tab{color:#cbd5e1}
+body.dark .post-card{background:#1e293b;border-color:#334155}
+body.dark .post-card p,body.dark .detail-card p,body.dark .modal-box p,body.dark .blog-header p{color:#cbd5e1}
+
+@media(max-width:900px){
+  .auth-card{grid-template-columns:1fr;min-height:auto}
+  .auth-left{padding:34px;text-align:center;align-items:center}
+  .auth-left h1{font-size:38px}
+  .auth-left p{font-size:16px}
+  .auth-right{padding:34px 24px}
+  .blog-grid{grid-template-columns:1fr}
+  .blog-header{flex-direction:column;text-align:center;gap:15px}
+  .header-actions{justify-content:center}
+}
+
+@media(max-width:480px){
+  .auth-view{padding:14px}
+  .auth-card{border-radius:22px}
+  .auth-left{padding:30px 18px}
+  .auth-left h1{font-size:32px}
+  .auth-right{padding:28px 18px}
+  .form h2{font-size:24px}
+  input,textarea{padding:13px}
+  .btn{width:100%}
+  .tabs .btn,.tab{width:auto}
+  .blog-view{width:94%;padding:18px 0}
+  .blog-header,.panel,.detail-card{padding:20px;border-radius:20px}
+  .blog-header h1{font-size:28px}
+  .post-actions,.form-actions,.modal-actions{flex-direction:column}
+  .detail-card h1{font-size:29px}
+}
